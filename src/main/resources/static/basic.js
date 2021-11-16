@@ -172,7 +172,7 @@ function setMyprice() {
     }
     $.ajax({
         type: "PUT",
-        url: '/api/products/{id}',
+        url: `/api/products/${targetId}`,
         contentType: "application/json",
         data: JSON.stringify({myprice: newprice}),
         success: function (response) {
