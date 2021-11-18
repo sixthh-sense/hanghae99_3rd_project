@@ -6,6 +6,7 @@ import com.sparta.deep_sea.domain.MemoryRequestDto;
 import com.sparta.deep_sea.service.MemoryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -16,27 +17,27 @@ public class MemoryController {
     private final MemoryRepository memoryRepository;
 
     // 게시물 작성
-    @PostMapping("/api/memories")
+    @PostMapping("/memories")
     public Memory createMemory(@RequestBody MemoryRequestDto requestDto) {
         Memory memory = new Memory(requestDto);
         return memoryRepository.save(memory);
     }
 
     // 전체 게시물 조회(게시)
-    @GetMapping("/api/memories")
+    @GetMapping("/memories")
     public List<Memory> readMemory() {
         return memoryRepository.findAllByOrderByModifiedAtDesc();
     }
 
     // 게시물 수정
-    @PutMapping("/api/memories/{id}")
+    @PutMapping("/memories/{id}")
     public Long updateMemory(@PathVariable Long id, @RequestBody MemoryRequestDto requestDto) {
         memoryService.update(id, requestDto);
         return id;
     }
 
     // 게시물 삭제
-    @DeleteMapping("/api/memories/{id}")
+    @DeleteMapping("/memories/{id}")
     public Long deleteMemory(@PathVariable Long id) {
         memoryRepository.deleteById(id);
         return id;
