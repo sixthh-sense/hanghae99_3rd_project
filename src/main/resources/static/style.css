@@ -13,7 +13,7 @@ body {
     margin: 10px auto;
 }
 
-#comment {
+#contents {
     width: 538px;
 }
 
@@ -132,21 +132,21 @@ textarea.field::placeholder {
 
 }
 
-.card .metadata .name {
+.card .metadata .username {
     margin-left: 20px;
 }
 
-.comment {
+.contents {
     padding: 0px 23px;
     word-wrap: break-word;
     word-break: break-all;
 }
 
-.comment div.edit {
+.contents div.edit {
     display: none;
 }
 
-.comment textarea.te-edit {
+.contents textarea.te-edit {
     border-right: none;
     border-top: none;
     border-left: none;
