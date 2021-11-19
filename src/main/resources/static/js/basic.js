@@ -28,13 +28,14 @@ function loadMemory() {
 }
 
 function addHTML(id, title, name, comment, modifiedAt) {
-    let tempHtml = `<div class="list-group" id="setup">
-                        <a href="/memories/detail/${id}" class="list-group-item list-group-item-action active">
+    let tempHtml = `<div class="list-group w-50 vh-20 index-list rounded-pill" id="setup">
+                        <a href="/detail/${id}" class="list-group-item list-group-item-action">
                             <div class="d-flex w-100 justify-content-between">
-                                <h5 class="title mb-1" >${title}</h5>
-                                <small class="modifiedAt">${modifiedAt}</small>
+                                <h5 class="title mb-1" >제목: ${title}</h5>
+                                <small class="modifiedAt"><i class="far fa-clock"></i> ${modifiedAt}</small>
                             </div>
-                            <p class="name mb-1">${name}</p>
+                            <p></p>
+                            <p class="name mb-1">작성자: ${name}</p>
                         </a>
                     </div>`
     $('#setup').append(tempHtml);

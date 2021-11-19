@@ -5,7 +5,6 @@ import com.sparta.deep_sea.domain.MemoryRepository;
 import com.sparta.deep_sea.domain.MemoryRequestDto;
 import com.sparta.deep_sea.service.MemoryService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -29,6 +28,8 @@ public class MemoryController {
     public List<Memory> readMemory() {
         return memoryRepository.findAllByOrderByModifiedAtDesc();
     }
+
+    // 상세 게시물 조회(게시)
 
     // 게시물 수정
     @PutMapping("/memories/{id}")
