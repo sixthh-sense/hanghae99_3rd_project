@@ -1,14 +1,15 @@
 package com.sparta.deep_sea.controller;
 
+import com.sparta.deep_sea.Dto.MemoryRequestDto;
 import com.sparta.deep_sea.domain.Memory;
 import com.sparta.deep_sea.domain.MemoryRepository;
-import com.sparta.deep_sea.domain.MemoryRequestDto;
+import com.sparta.deep_sea.security.UserDetailsImpl;
 import com.sparta.deep_sea.service.MemoryService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.ui.Model;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor
@@ -31,10 +32,13 @@ public class MemoryController {
 
     // 상세 게시물 조회(게시)
 
+
     // 게시물 수정
     @PutMapping("/memories/{id}")
     public Long updateMemory(@PathVariable Long id, @RequestBody MemoryRequestDto requestDto) {
         memoryService.update(id, requestDto);
+//        memoryService.update(id, requestDto);
+//        return id;
         return id;
     }
 

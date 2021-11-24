@@ -18,10 +18,9 @@ function loadMemory() {
                 let memory = response[i];
                 let id = memory['id'];
                 let title = memory['title'];
-                let name = memory['name'];
                 let comment = memory['comment'];
                 let modifiedAt = memory['modifiedAt'];
-                addHTML(id, title, name, comment, modifiedAt);
+                addHTML(id, title, comment, modifiedAt);
             }
         }
     })
@@ -34,20 +33,17 @@ function addHTML(id, title, name, comment, modifiedAt) {
                                 <h5 class="title mb-1" >제목: ${title}</h5>
                                 <small class="modifiedAt"><i class="far fa-clock"></i> ${modifiedAt}</small>
                             </div>
-                            <p></p>
-                            <p class="name mb-1">작성자: ${name}</p>
                         </a>
                     </div>`
     $('#setup').append(tempHtml);
-    console.log(id);
+    console.log(modifiedAt);
 }
 
 
 function recordMemory() {
     let title = $('#title').val();
-    let name = $('#name').val();
     let comment = $('#comment').val();
-    let data = {'title': title, 'name': name, 'comment': comment};
+    let data = {'title': title, 'comment': comment};
 
     $.ajax({
         type: "POST",
@@ -65,7 +61,6 @@ function recordMemory() {
         error: function (request, status, error) {
             alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
             console.log(title);
-            console.log(name);
             console.log(comment);
         }
     });

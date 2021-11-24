@@ -1,8 +1,8 @@
 package com.sparta.deep_sea.service;
 
+import com.sparta.deep_sea.Dto.MemoryRequestDto;
 import com.sparta.deep_sea.domain.Memory;
 import com.sparta.deep_sea.domain.MemoryRepository;
-import com.sparta.deep_sea.domain.MemoryRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +13,15 @@ import javax.transaction.Transactional;
 public class MemoryService {
 
     private final MemoryRepository memoryRepository;
+
+
+//    public Memory createMemory(MemoryRequestDto requestDto, Long userId) {
+//        Memory memory = new Memory(requestDto, userId);
+//        memoryRepository.save(memory);
+//        return memory;
+//    }
+
+
 
     @Transactional
     public Long update(Long id, MemoryRequestDto requestDto) {

@@ -27,7 +27,6 @@
 </script>
 
 <body>
-
 <!-- Image and text -->
 <nav class="navbar navbar-light" style="background-image: url(images/pexels-asad-photo-maldives-457881_severed.jpg); background-repeat: repeat-x;">
     <a class="navbar-brand navbar-shallow" href="/">
@@ -60,10 +59,10 @@
                     <input type="text" id="title" class="form-control" aria-label="Sizing example input"
                            aria-describedby="inputGroup-sizing-default" placeholder="제목">
                 </div>
-                <div class="input-group mb-3">
-                    <input type="text" id="name" class="form-control" aria-label="Sizing example input"
-                           aria-describedby="inputGroup-sizing-default" placeholder="이름">
-                </div>
+<!--                <div class="input-group mb-3">-->
+<!--                    <input type="text" id="name" class="form-control" aria-label="Sizing example input"-->
+<!--                           aria-describedby="inputGroup-sizing-default" placeholder="이름">-->
+<!--                </div>-->
                 <div class="input-group">
                     <textarea class="form-control" id="comment" aria-label="With textarea" placeholder="내용"></textarea>
                 </div>
@@ -76,6 +75,24 @@
         </div>
     </div>
 </div>
+
+<div class="header" style="position:relative;">
+<!--    <div id="header-title-login-user">-->
+<!--        <span th:text="${username}"></span> 님의-->
+<!--    </div>-->
+<!--    <div id="header-title-select-shop">-->
+<!--        Select Shop-->
+<!--    </div>-->
+
+    <form id="" method="post" action="/user/login">
+        <a id="login-text" href="javascript:{}" onclick="document.getElementById('my_form').submit();">로그인</a>
+    </form>
+
+    <form id="my_form" method="post" action="/user/logout">
+        <a id="logout-text" href="javascript:{}" onclick="document.getElementById('my_form').submit();">로그아웃</a>
+    </form>
+</div>
+
 
 <div class="list-group w-100 vh-20 index-list rounded-pill" id="setup">
     <a href="/detail/1" class="list-group-item list-group-item-action">

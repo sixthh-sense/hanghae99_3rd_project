@@ -19,7 +19,7 @@ public class MemoryDetailController {
                 () -> new IllegalArgumentException("ID가 존재하지 않습니다."));
         System.out.println(model);
         model.addAttribute("title", memory.getTitle());
-        model.addAttribute("name", memory.getName());
+//        model.addAttribute("name", memory.getName());
         model.addAttribute("comment", memory.getComment());
         System.out.println(model);
         return "detail";
